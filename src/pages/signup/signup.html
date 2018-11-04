@@ -21,6 +21,53 @@
         <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
 
+      
+      <ion-item>
+          <ion-label fixed>Ciudad</ion-label>
+          <ion-input type="text" value=""></ion-input>
+        </ion-item>
+  
+      <ion-item>
+        <ion-label fixed>Dirección</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label fixed>Celular</ion-label>
+          <ion-input type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>tipo de documento</ion-label>
+            <ion-input type="text" value=""></ion-input>
+          </ion-item>
+
+          
+
+        <br>
+          <ion-list radio-group>
+              <ion-list-header>
+                Tipo de usuario
+              </ion-list-header>
+            
+              <ion-item>
+                <ion-label>Donante</ion-label>
+                <ion-radio checked="true" value="go"></ion-radio>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label>Organización</ion-label>
+                <ion-radio value="rust"></ion-radio>
+              </ion-item>
+            
+             
+            </ion-list>
+  
+
+     
+      
+   
+
       <!--
       Want to add a Username? Here you go:
 
@@ -40,5 +87,9 @@
       </div>
 
     </ion-list>
+    
+        
+       
+  
   </form>
 </ion-content>
