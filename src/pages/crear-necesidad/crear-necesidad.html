@@ -9,7 +9,15 @@
   <ion-navbar>
     <ion-title>CrearNecesidad</ion-title>
   </ion-navbar>
-
+  <ion-list>
+    <ion-item>
+      <ion-label>Categoría</ion-label>
+      <ion-select [(ngModel)]="gaming">
+        <ion-option value="nes">Producto</ion-option>
+        <ion-option value="n64">Servicio</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 </ion-header>
 
 
