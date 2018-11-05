@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'https://example.com/api/v1';
+  url: string = 'https://secret-shore-80257.herokuapp.com';
+  //url: string = 'http://localhost:3000';
+  urlGlobal: string = 'https://secret-shore-80257.herokuapp.com';
 
   constructor(public http: HttpClient) {
   }
@@ -26,7 +28,7 @@ export class Api {
       }
     }
 
-    return this.http.get(this.url + '/' + endpoint, reqOpts);
+    return this.http.get(this.url + '/' + endpoint + ".json", reqOpts);
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {

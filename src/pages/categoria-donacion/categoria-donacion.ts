@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DonationKindProvider } from '../../providers/donation-kind/donation-kind';
 
 /**
  * Generated class for the CategoriaDonacionPage page.
@@ -15,11 +16,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CategoriaDonacionPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tiposDonacion: ArrayBuffer;
+
+  constructor(
+    public navCtrl: NavController,
+     public navParams: NavParams,
+     public donationKindsProvider: DonationKindProvider
+     ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoriaDonacionPage');
+    this.donationKindsProvider.getDonationKinds().subscribe(
+      (data) =>
+      {
+          this.tiposDonacion = data;
+          console.log(JSON.stringify(data));
+      },
+      (error) => 
+      {
+        console.log(JSON.stringify(error));
+      }
+      );
+
   }
 
 }

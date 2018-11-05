@@ -17,12 +17,9 @@
   Selecciona un tipo de donación:
   <div padding>
     <ion-segment [(ngModel)]="pet">
-      <ion-segment-button value="productos" id="prods">
-        productos
-      </ion-segment-button>
-      <ion-segment-button value="servicios">
-        servicios
-      </ion-segment-button>
+      <ion-segment-button  *ngFor="let tipoDonacion of tiposDonacion" value="servicios">
+          {{tipoDonacion.name}}
+        </ion-segment-button>
     </ion-segment>
   </div>
   
