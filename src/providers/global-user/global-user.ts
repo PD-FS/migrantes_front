@@ -3,25 +3,24 @@ import { Injectable } from '@angular/core';
 import { Api } from '../api/api';
 
 /*
-  Generated class for the DonationKindProvider provider.
+  Generated class for the GlobalUserProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class DonationKindProvider {
-
-  endpoint:string = "donation_kinds"
+export class GlobalUserProvider {
+  endpoint:string = "users"
   constructor(
     public http: HttpClient,
     public api: Api
     ) {
-    
+    console.log('Hello GlobalUserProvider Provider');
   }
-
-  getDonationKinds(params?: any) {
+  
+  getUser(id:string, params?: any) {
     console.log('Cargando página.-...');
-    return this.api.get(false, this.endpoint, [])
+    return this.api.get(true, this.endpoint+"/"+id, [])
 
     
   }

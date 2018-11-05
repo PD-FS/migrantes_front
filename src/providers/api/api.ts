@@ -8,12 +8,14 @@ import { Injectable } from '@angular/core';
 export class Api {
   url: string = 'https://secret-shore-80257.herokuapp.com';
   //url: string = 'http://localhost:3000';
-  urlGlobal: string = 'https://secret-shore-80257.herokuapp.com';
+  //urlGlobal: string = 'https://secret-shore-80257.herokuapp.com';
+  urlGlobal: string = 'http://localhost:3000';
+
 
   constructor(public http: HttpClient) {
   }
 
-  get(endpoint: string, params?: any, reqOpts?: any) {
+  get(isGlobal:boolean, endpoint: string, params?: any, reqOpts?: any) {
     if (!reqOpts) {
       reqOpts = {
         params: new HttpParams()
@@ -28,7 +30,15 @@ export class Api {
       }
     }
 
-    return this.http.get(this.url + '/' + endpoint + ".json", reqOpts);
+    if(isGlobal)
+    {
+      return this.http.get(this.urlGlobal + '/' + endpoint + ".json", reqOpts);
+    }
+    else
+    {
+      return this.http.get(this.url + '/' + endpoint + ".json", reqOpts);
+    }
+    
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {
