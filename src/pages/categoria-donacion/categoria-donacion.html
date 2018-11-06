@@ -14,17 +14,27 @@
 
 
 <ion-content padding>
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="infoUsuario?.pictureThumbnail">
+    </ion-avatar>
+    <h2>{{infoUsuario?.name}} {{infoUsuario?.lastname}}</h2>
+    <p>{{infoUsuario?.email}}</p>
+    <p>{{infoUsuario?.birthday}}</p>
+  </ion-item>
+  
+  <br>
   Selecciona un tipo de donación:
   <div padding>
     <ion-segment [(ngModel)]="pet">
-      <ion-segment-button  *ngFor="let tipoDonacion of tiposDonacion" value="servicios">
+      <ion-segment-button  *ngFor="let tipoDonacion of tiposDonacion" [value]="tipoDonacion.name">
           {{tipoDonacion.name}}
         </ion-segment-button>
     </ion-segment>
   </div>
   
   <div [ngSwitch]="pet">
-    <ion-list *ngSwitchCase="'servicios'">
+    <ion-list   *ngSwitchCase="servicios">
       <ion-item>
           <ion-icon name="basket"></ion-icon>
         <h2>Ruby</h2>

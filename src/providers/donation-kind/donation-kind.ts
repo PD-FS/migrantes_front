@@ -20,10 +20,7 @@ export class DonationKindProvider {
   }
 
   getDonationKinds(params?: any) {
-    console.log('Cargando página.-...');
-    return this.api.get(false, this.endpoint, [])
-
-    
+    return this.api.get(false, this.endpoint, [])   
   }
 
 }

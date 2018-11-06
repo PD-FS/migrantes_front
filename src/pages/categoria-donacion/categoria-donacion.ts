@@ -19,7 +19,7 @@ export class CategoriaDonacionPage {
 
   tiposDonacion: ArrayBuffer;
 
-  infoUsuario: ArrayBuffer;
+  infoUsuario: any;
 
   constructor(
     public navCtrl: NavController,
@@ -31,11 +31,10 @@ export class CategoriaDonacionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoriaDonacionPage');
-    this.globalUserProvider.getUser("4").subscribe(
+    this.globalUserProvider.getUser("18").subscribe(
       (data) =>
       {
-        console.log(JSON.stringify(data));
-          
+        this.infoUsuario = data;  
       },
       (error) => 
       {
@@ -47,7 +46,6 @@ export class CategoriaDonacionPage {
       (data) =>
       {
           this.tiposDonacion = data;
-          //console.log(JSON.stringify(data));
       },
       (error) => 
       {

@@ -8,8 +8,8 @@ import { Injectable } from '@angular/core';
 export class Api {
   url: string = 'https://secret-shore-80257.herokuapp.com';
   //url: string = 'http://localhost:3000';
-  //urlGlobal: string = 'https://secret-shore-80257.herokuapp.com';
-  urlGlobal: string = 'http://localhost:3000';
+  urlGlobal: string = 'https://floating-chamber-80486.herokuapp.com';
+  //urlGlobal: string = 'http://localhost:3000';
 
 
   constructor(public http: HttpClient) {

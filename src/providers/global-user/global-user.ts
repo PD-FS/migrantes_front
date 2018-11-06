@@ -10,19 +10,18 @@ import { Api } from '../api/api';
 */
 @Injectable()
 export class GlobalUserProvider {
+  
   endpoint:string = "users"
+  
   constructor(
     public http: HttpClient,
     public api: Api
     ) {
-    console.log('Hello GlobalUserProvider Provider');
+      
   }
   
   getUser(id:string, params?: any) {
-    console.log('Cargando página.-...');
     return this.api.get(true, this.endpoint+"/"+id, [])
-
-    
   }
 
 }
