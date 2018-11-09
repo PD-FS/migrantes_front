@@ -18,7 +18,8 @@
     <ion-avatar item-start>
       <img [src]="infoUsuario?.pictureThumbnail">
     </ion-avatar>
-    <h2>{{infoUsuario?.name}} {{infoUsuario?.lastname}}</h2>
+    <h2 *ngIf="infoUsuario?.gender.name == 'Masculino'">Señor {{infoUsuario?.lastname}}, {{infoUsuario?.name}}</h2>
+    <h2 *ngIf="infoUsuario?.gender.name == 'Femenino'">Señorita {{infoUsuario?.lastname}}, {{infoUsuario?.name}}</h2>
     <p>{{infoUsuario?.email}}</p>
     <p>{{infoUsuario?.birthday}}</p>
   </ion-item>
@@ -34,7 +35,7 @@
   </div>
   
   <div [ngSwitch]="pet">
-    <ion-list   *ngSwitchCase="servicios">
+    <ion-list   *ngSwitchCase="ServiciosServ">
       <ion-item>
           <ion-icon name="basket"></ion-icon>
         <h2>Ruby</h2>
@@ -48,7 +49,7 @@
       </ion-item>
     </ion-list>
   
-    <ion-list *ngSwitchCase="'productos'">
+    <ion-list *ngSwitchCase="ProductosServ">
       <ion-item>
           <ion-icon name="basket"></ion-icon>
         <h2>Luna</h2>

@@ -31,9 +31,10 @@ export class CategoriaDonacionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoriaDonacionPage');
-    this.globalUserProvider.getUser("18").subscribe(
+    this.globalUserProvider.getUser("1800212566").subscribe(
       (data) =>
       {
+        console.log(JSON.stringify(data));
         this.infoUsuario = data;  
       },
       (error) => 
